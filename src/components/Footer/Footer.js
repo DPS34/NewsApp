@@ -7,7 +7,7 @@ function Footer() {
             <Link to="/">
             <img className='footer-logo' src="https://i.imgur.com/A7BQDaC.png" alt=""/>
             </Link>
-            <div className='text-white'>
+            <div className='text-white select-enabled'>
                 <p>Phone: +37061581898</p>
                 <p>Gmail: domantas.va@gmail.com</p>
             </div>

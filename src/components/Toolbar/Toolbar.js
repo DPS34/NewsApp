@@ -10,15 +10,10 @@ function Toolbar() {
     let searchRef = useRef()
     let history = useHistory()
 
-    let handleKeyPress = (event) => {
-        if(event.key === 'Enter'){
-            console.log('enter press here! ')
-        }
-    }
-
     const [getError, setError] = useState('')
 
     function search() {
+        setTimeout(() =>{setError('')}, 7500)
         if (searchRef.current.value.length > 40) {
             return setError('Too many symbols, max (40).')
         }
@@ -29,7 +24,6 @@ function Toolbar() {
         if (format.test(searchRef.current.value)) {
             return setError('Please do not use prohibited symbols')
         }
-        setError('')
         const param = encodeURI(searchRef.current.value)
         fetch('http://localhost:3001/search/' + param).then(res => res.json())
         history.push('/search/' + param)

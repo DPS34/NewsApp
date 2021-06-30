@@ -8,7 +8,8 @@ function SingleArticleCard(article) {
         return {backgroundImage: `url(${image})`}
     }
 
-    function saveClick() {
+    function saveClick(url) {
+        window.open(url, "_blank")
         const data = {
             title: article.article.title,
             image: article.article.image,
@@ -28,7 +29,7 @@ function SingleArticleCard(article) {
 
     return (
         <div style={getBackground(article.article.image)} className='card'>
-            <a onClick={() => saveClick()} className="dark-bg text-white d-flex flex-column justify-content-between" href={article.article.url}>
+            <a onClick={() => saveClick(article.article.url)} className="dark-bg text-white d-flex flex-column justify-content-between">
                 <h2 className='ellipsis'>{article.article.title}</h2>
                 <p className='ellipsis'>{article.article.description}</p>
                 <p>Published at <span>{article.article.publishedAt.slice(0, 10)}</span></p>
