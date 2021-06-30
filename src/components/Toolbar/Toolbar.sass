@@ -29,8 +29,13 @@
   color: #d5d5d5
   opacity: 1
 
+.error
+  color: #c11010
+  font-size: 13px
+  height: 15px
 
 .search-button
+  cursor: pointer
   position: relative
   display: inline-block
   padding: 10px 15px
@@ -90,4 +95,20 @@
   transition: 1s
   transition-delay: 0.13s
 
+@media (max-width: 768px)
+  .column-s
+    flex-direction: column
+  .toolbar
+    height: auto
+    padding: 15px 0 15px 0
+    position: static
+  .toolbar-logo
+    margin: 7px
+    height: 80px
+  .search-input
+    width: 60%
+  .justify-content-center-s
+    justify-content: center
+  .search-button
+    background: $blue
 

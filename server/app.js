@@ -7,6 +7,7 @@ const mainRouter = require('./routers/router')
 
 require('dotenv').config()
 
+
 mongoose.connect(process.env.MONGO_KEY, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(info => {
         console.log('connected successfully')
@@ -18,6 +19,7 @@ mongoose.connect(process.env.MONGO_KEY, { useNewUrlParser: true, useUnifiedTopol
 app.listen(3001)
 app.use(express.json())
 app.use(cors({origin: '*'}))
+
 
 
 app.use(['/'], mainRouter)
