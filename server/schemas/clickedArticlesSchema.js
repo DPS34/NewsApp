@@ -1,0 +1,22 @@
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema;
+
+const clickedArticlesSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    quantity: {
+        type: Number,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+})
+
+const articleSchema = mongoose.model("items", clickedArticlesSchema)
+
+module.exports = {articleSchema}
