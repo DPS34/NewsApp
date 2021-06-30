@@ -37,7 +37,7 @@ function SearchResults(homepage) {
                     )
                 )}
             </div>}
-        </div> : <div className='d-flex justify-content-center align-items-center'>
+        </div> : <div className='min-height d-flex justify-content-center align-items-center'>
                 <div style={{marginTop: "40%"}} className="lds-roller">
                     <div></div>
                     <div></div>

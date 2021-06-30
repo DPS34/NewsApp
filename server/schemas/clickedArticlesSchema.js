@@ -3,20 +3,28 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const clickedArticlesSchema = new Schema({
-    name: {
+    title: {
         type: String,
         required: true
     },
-    quantity: {
-        type: Number,
+    description: {
+        type: String,
         required: true
     },
-    price: {
-        type: Number,
+    image: {
+        type: String,
         required: true
     },
+    url: {
+        type: String,
+        required: true
+    },
+    time: {
+        type: Number,
+        required: true
+    }
 })
 
-const articleSchema = mongoose.model("items", clickedArticlesSchema)
+const articleSchema = mongoose.model("articles", clickedArticlesSchema)
 
 module.exports = {articleSchema}

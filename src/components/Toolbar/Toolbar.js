@@ -10,6 +10,12 @@ function Toolbar() {
     let searchRef = useRef()
     let history = useHistory()
 
+    let handleKeyPress = (event) => {
+        if(event.key === 'Enter'){
+            console.log('enter press here! ')
+        }
+    }
+
     const [getError, setError] = useState('')
 
     function search() {
@@ -25,6 +31,7 @@ function Toolbar() {
         }
         setError('')
         const param = encodeURI(searchRef.current.value)
+        fetch('http://localhost:3001/search/' + param).then(res => res.json())
         history.push('/search/' + param)
     }
 
@@ -36,7 +43,11 @@ function Toolbar() {
             <div>
                 <p className='error no-margin no-padding'>{getError}</p>
                 <div className='d-flex justify-content-center'>
-                    <input ref={searchRef} type="text" className='search-input' placeholder='Search for articles...'/>
+                    <input onKeyPress={event => {
+                        if (event.key === 'Enter') {
+                            search()
+                        }
+                    }} ref={searchRef} type="text" className='search-input' placeholder='Search for articles...'/>
                     <div className='search-button' onClick={() => search()}>
                         <span></span>
                         <span></span>

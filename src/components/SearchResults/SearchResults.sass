@@ -1,5 +1,6 @@
 .board
   margin-top: 90px
+  min-height: calc(100vh - 165px)
   position: relative
   display: grid
   grid-template-columns: repeat(3, 1fr)
@@ -9,7 +10,9 @@
   padding: 0 10% 50px 10%
   grid-gap: 20px
   transition: 0.5s
-
+.min-height
+  min-height: calc(100vh - 165px)
+  margin-top: 80px
 .board div
   height: 375px
   transition: 0.25s
@@ -35,6 +38,7 @@
   cursor: pointer
 .search-error
   margin-top: 80px
+  min-height: calc(100vh - 165px)
 
 .lds-roller
   display: inline-block
