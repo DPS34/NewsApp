@@ -21,11 +21,9 @@ function SearchResults(homepage) {
 
     useEffect(() => {
         const arg = encodeURI(param.arguments)
-        fetch('https://gnews.io/api/v4/search?q='+ getKeywords(arg) +'&token=4a1350c327a1c412c1f1fec37e0e1e67&lang=en&max=9').then(res => res.json()).then(data => {
+        fetch('https://gnews.io/api/v4/search?q='+ getKeywords(arg) +'&token=a5011cbcac55117e897cc4e8903bcea4&lang=en&max=9').then(res => res.json()).then(data => {
             setPosts(data.articles)
-            console.log(data)
         })
-        setPosts([])
     },[param])
 
     return (
@@ -39,7 +37,18 @@ function SearchResults(homepage) {
                     )
                 )}
             </div>}
-        </div> : null
+        </div> : <div className='d-flex justify-content-center align-items-center'>
+                <div style={{marginTop: "40%"}} className="lds-roller">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
     );
 }
 

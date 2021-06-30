@@ -1,6 +1,7 @@
 import './App.sass';
 
 import Toolbar from "./components/Toolbar/Toolbar";
+import Footer from "./components/Footer/Footer";
 import SearchResults from "./components/SearchResults/SearchResults";
 import {
     BrowserRouter as Router,
@@ -23,6 +24,7 @@ function App() {
                         <SearchResults homepage={false}/>
                     </Route>
                 </Switch>
+                <Footer/>
             </Router>
     );
 }
